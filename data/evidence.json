@@ -1,0 +1,17 @@
+[
+  {"id": "ev-001", "control": "ctl-output-filter",
+   "test": "Project 1 red-team runner, both modes", "proof": "hitlog vulnerable 1/10 -> defended 0/10",
+   "last_tested": "2026-10-21", "status": "passing"},
+  {"id": "ev-002", "control": "ctl-entitlement-filter",
+   "test": "Project 2 RAG red-team, cross-role probes", "proof": "cross-role 2/2 -> 0/2 at retrieval layer",
+   "last_tested": "2026-10-21", "status": "passing"},
+  {"id": "ev-003", "control": "ctl-data-separation",
+   "test": "Project 2 RAG red-team, injection probes", "proof": "injection 2/2 -> 1/2 (residual, tracked as risk-003)",
+   "last_tested": "2026-10-21", "status": "partial"},
+  {"id": "ev-004", "control": "ctl-tool-gateway",
+   "test": "Project 3 agent red-team + 6 gateway unit tests", "proof": "restricted actions 2/2 -> 0/2 executed",
+   "last_tested": "2026-10-21", "status": "passing"},
+  {"id": "ev-005", "control": "ctl-detections",
+   "test": "Project 4 detection run + 7 rule tests", "proof": "5/5 attack sessions detected, 0 false positives",
+   "last_tested": "2026-10-21", "status": "passing"}
+]

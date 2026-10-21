@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ctl-output-filter",
+    "name": "Output secret/system-prompt filtering",
+    "nist_ai_rmf": "MANAGE-2.2",
+    "owasp": "LLM02, LLM07",
+    "atlas": "AML.T0057",
+    "evidence": "ev-001"
+  },
+  {
+    "id": "ctl-entitlement-filter",
+    "name": "Role-based entitlement filtering at retrieval",
+    "nist_ai_rmf": "MAP-2.3 / MANAGE-2.2",
+    "owasp": "LLM02",
+    "atlas": "AML.T0024",
+    "evidence": "ev-002"
+  },
+  {
+    "id": "ctl-data-separation",
+    "name": "Instruction/data separation for retrieved content",
+    "nist_ai_rmf": "MEASURE-2.7",
+    "owasp": "LLM01",
+    "atlas": "AML.T0051",
+    "evidence": "ev-003"
+  },
+  {
+    "id": "ctl-tool-gateway",
+    "name": "Tool authorization gateway (allow-list, resource perms, HITL)",
+    "nist_ai_rmf": "MANAGE-2.1",
+    "owasp": "LLM06",
+    "atlas": "AML.T0051",
+    "evidence": "ev-004"
+  },
+  {
+    "id": "ctl-detections",
+    "name": "AI-security monitoring & detections",
+    "nist_ai_rmf": "MEASURE-2.6 / MANAGE-4.1",
+    "owasp": "LLM-ops",
+    "atlas": "AML.T0057",
+    "evidence": "ev-005"
+  }
+]

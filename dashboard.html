@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Governance</title>
+<style>
+:root{--bg:#f4f6fa;--panel:#fff;--line:#dce2ec;--ink:#141824;--muted:#5a6579;--accent:#2f5bd8;--ok:#1f8a5b;--warn:#b7791f;--bad:#c2334f;--f:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b0e14;--panel:#141a23;--line:#273040;--ink:#e9eef7;--muted:#93a0b2;--accent:#6f9bff;--ok:#46c98a;--warn:#e0a84a;--bad:#ff6b81;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0b0e14;--panel:#141a23;--line:#273040;--ink:#e9eef7;--muted:#93a0b2;--accent:#6f9bff;--ok:#46c98a;--warn:#e0a84a;--bad:#ff6b81;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding:40px 20px 72px}h1{font-size:26px;margin:0 0 4px}h2{font-size:17px;margin:34px 0 12px}
+.sub{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}.card .b{font-size:30px;font-weight:700}
+.card .l{color:var(--muted);font-size:13px}table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+tr:last-child td{border-bottom:none}code{font-family:ui-monospace,Menlo,monospace;font-size:12px}.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad);font-weight:600}
+.thread{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:16px;font-size:14px}
+.thread b{color:var(--accent)}
+</style></head><body><div class="wrap">
+<h1>Northwind AI Security &amp; Governance</h1>
+<p class="sub">Executive assurance view. Every risk traces to a control, every control to tested evidence.</p>
+<div class="cards">
+<div class="card"><div class="b">4</div><div class="l">AI systems in inventory</div></div>
+<div class="card"><div class="b" style="color:var(--bad)">3</div><div class="l">high/critical-tier systems</div></div>
+<div class="card"><div class="b">5</div><div class="l">tracked risks</div></div>
+<div class="card"><div class="b" style="color:var(--bad)">1</div><div class="l">open risks needing action</div></div>
+</div>
+<h2>Risk register</h2>
+<table><thead><tr><th>ID</th><th>Risk</th><th>OWASP</th><th>Impact</th><th>Status</th><th>Retest evidence</th></tr></thead><tbody><tr><td><code>risk-001</code></td><td>System-prompt / secret disclosure via prompt injection</td><td>LLM07 System Prompt Leakage</td><td>high</td><td class='ok'>mitigated</td><td>Project 1 defended run: 0/10</td></tr><tr><td><code>risk-002</code></td><td>Cross-role retrieval of confidential HR documents</td><td>LLM02 Sensitive Information Disclosure</td><td>high</td><td class='ok'>mitigated</td><td>Project 2 defended run: cross-role 0/2</td></tr><tr><td><code>risk-003</code></td><td>Indirect prompt injection via poisoned uploaded document</td><td>LLM01 Prompt Injection</td><td>medium</td><td class='bad'>open</td><td>Project 2 defended run: 1/2 injection still succeeded</td></tr><tr><td><code>risk-004</code></td><td>Agent coerced into an unauthorized restricted-asset action</td><td>LLM06 Excessive Agency</td><td>critical</td><td class='ok'>mitigated</td><td>Project 3 defended run: 0/2 executed</td></tr><tr><td><code>risk-005</code></td><td>Undetected misuse (no monitoring on AI traffic)</td><td>LLM-ops</td><td>high</td><td class='ok'>mitigated</td><td>Project 4: 5/5 attack sessions detected, 0 false positives</td></tr></tbody></table>
+<h2>Control mapping &amp; evidence</h2>
+<table><thead><tr><th>Control</th><th>NIST AI RMF</th><th>OWASP</th><th>Proof</th><th>Evidence</th></tr></thead><tbody><tr><td>Output secret/system-prompt filtering</td><td>MANAGE-2.2</td><td>LLM02, LLM07</td><td>hitlog vulnerable 1/10 -&gt; defended 0/10</td><td class='ok'>passing</td></tr><tr><td>Role-based entitlement filtering at retrieval</td><td>MAP-2.3 / MANAGE-2.2</td><td>LLM02</td><td>cross-role 2/2 -&gt; 0/2 at retrieval layer</td><td class='ok'>passing</td></tr><tr><td>Instruction/data separation for retrieved content</td><td>MEASURE-2.7</td><td>LLM01</td><td>injection 2/2 -&gt; 1/2 (residual, tracked as risk-003)</td><td class='warn'>partial</td></tr><tr><td>Tool authorization gateway (allow-list, resource perms, HITL)</td><td>MANAGE-2.1</td><td>LLM06</td><td>restricted actions 2/2 -&gt; 0/2 executed</td><td class='ok'>passing</td></tr><tr><td>AI-security monitoring &amp; detections</td><td>MEASURE-2.6 / MANAGE-4.1</td><td>LLM-ops</td><td>5/5 attack sessions detected, 0 false positives</td><td class='ok'>passing</td></tr></tbody></table>
+<h2>Traceability thread</h2>
+<div class="thread"><b>risk-001</b> (system-prompt leak, Project 1) &rarr; logged as a high/high risk &rarr;
+mapped to <b>ctl-output-filter</b> (NIST MANAGE-2.2, OWASP LLM07) &rarr; tested by <b>ev-001</b>
+(red-team runner) &rarr; proof: vulnerable 1/10 &rarr; defended 0/10 &rarr; status <b>mitigated</b>.
+One technical weakness, followed all the way to a managed, evidenced business risk.</div>
+</div></body></html>

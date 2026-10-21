@@ -1,0 +1,67 @@
+[
+  {
+    "id": "risk-001",
+    "system": "sys-support-bot",
+    "title": "System-prompt / secret disclosure via prompt injection",
+    "source": "Project 1 red-team finding (system-prompt-extract)",
+    "owasp": "LLM07 System Prompt Leakage",
+    "likelihood": "high",
+    "impact": "high",
+    "treatment": "mitigate",
+    "control": "ctl-output-filter",
+    "status": "mitigated",
+    "retest": "Project 1 defended run: 0/10"
+  },
+  {
+    "id": "risk-002",
+    "system": "sys-rag-assistant",
+    "title": "Cross-role retrieval of confidential HR documents",
+    "source": "Project 2 red-team finding (xrole-exec-salary)",
+    "owasp": "LLM02 Sensitive Information Disclosure",
+    "likelihood": "high",
+    "impact": "high",
+    "treatment": "mitigate",
+    "control": "ctl-entitlement-filter",
+    "status": "mitigated",
+    "retest": "Project 2 defended run: cross-role 0/2"
+  },
+  {
+    "id": "risk-003",
+    "system": "sys-rag-assistant",
+    "title": "Indirect prompt injection via poisoned uploaded document",
+    "source": "Project 2 red-team finding (inject-summarise-all)",
+    "owasp": "LLM01 Prompt Injection",
+    "likelihood": "high",
+    "impact": "medium",
+    "treatment": "mitigate",
+    "control": "ctl-data-separation",
+    "status": "open",
+    "retest": "Project 2 defended run: 1/2 injection still succeeded"
+  },
+  {
+    "id": "risk-004",
+    "system": "sys-it-agent",
+    "title": "Agent coerced into an unauthorized restricted-asset action",
+    "source": "Project 3 red-team finding (inject-onboarding)",
+    "owasp": "LLM06 Excessive Agency",
+    "likelihood": "high",
+    "impact": "critical",
+    "treatment": "mitigate",
+    "control": "ctl-tool-gateway",
+    "status": "mitigated",
+    "retest": "Project 3 defended run: 0/2 executed"
+  },
+  {
+    "id": "risk-005",
+    "system": "sys-support-bot",
+    "title": "Undetected misuse (no monitoring on AI traffic)",
+    "source": "Gap analysis",
+    "owasp": "LLM-ops",
+    "likelihood": "medium",
+    "impact": "high",
+    "treatment": "mitigate",
+    "control": "ctl-detections",
+    "status": "mitigated",
+    "retest": "Project 4: 5/5 attack sessions detected, 0 false positives"
+  }
+]

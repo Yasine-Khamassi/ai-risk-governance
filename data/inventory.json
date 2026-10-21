@@ -1,0 +1,46 @@
+[
+  {
+    "id": "sys-support-bot",
+    "name": "Customer-support assistant (NorthwindBot)",
+    "owner": "Support Engineering",
+    "purpose": "Answer customer order, return and shipping questions",
+    "model": "llama3.2:3b (local)",
+    "data_classification": "internal + customer PII",
+    "users": "external customers",
+    "integrations": "order DB (read), email",
+    "risk_tier": "high"
+  },
+  {
+    "id": "sys-rag-assistant",
+    "name": "Employee RAG assistant",
+    "owner": "IT",
+    "purpose": "Answer staff questions over internal documents",
+    "model": "llama3.2:3b + nomic-embed-text",
+    "data_classification": "confidential (HR, finance)",
+    "users": "employees (role-based)",
+    "integrations": "vector store, document ingestion",
+    "risk_tier": "high"
+  },
+  {
+    "id": "sys-it-agent",
+    "name": "IT-support agent",
+    "owner": "IT Operations",
+    "purpose": "Take IT actions: tickets, inventory lookups",
+    "model": "llama3.2:3b",
+    "data_classification": "internal + restricted assets",
+    "users": "employees",
+    "integrations": "ticketing, asset inventory",
+    "risk_tier": "critical"
+  },
+  {
+    "id": "sys-coding-agent",
+    "name": "Developer coding assistant",
+    "owner": "Platform",
+    "purpose": "Help engineers write and review code",
+    "model": "hosted API",
+    "data_classification": "source code",
+    "users": "engineers",
+    "integrations": "repo read",
+    "risk_tier": "medium"
+  }
+]
